@@ -1,0 +1,321 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}BetiseetVolupthe{% endblock %}
+
+{% block body %}
+
+    {% include 'navbar/index.html.twig' %}
+
+    <section id="hero">
+        <div class="hero-container">
+            <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+
+                <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+                <div class="carousel-inner" role="listbox">
+
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active" style="background: url(http://lorempixel.com/1920/1123/food/1);">
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h1 class="animate__animated animate__fadeInDown"><span>Livrer o</span>u emporter !</h1>
+                                <h1 class="animate__animated animate__fadeInUp"><span>{% for menus in menu %} {{ menus.prix }}€ {% endfor %}</span></h1>
+                                <h2 class="animate__animated animate__fadeInUp"> Entrée - Plat - Dessert</h2>
+                            <div>
+                                <a href="{{ path('menu') }}" class="btn-menu animate__animated animate__fadeInUp scrollto">Commander</a>
+                                <a href="{{ path('index')}}#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Réserver</a>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="carousel-item" style="background: url(http://lorempixel.com/1920/1123/food/2);">
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h1 class="animate__animated animate__fadeInDown"><span>Livrer o</span>u emporter !</h1>
+                                <h1 class="animate__animated animate__fadeInUp"><span>{% for menus in menu %} {{ menus.prix }}€ {% endfor %}  </span></h1>
+                                <h2 class="animate__animated animate__fadeInUp"> Entrée - Plat - Dessert</h2>
+                                <div>
+                                    <a href="{{ path('menu') }}" class="btn-menu animate__animated animate__fadeInUp scrollto">Commander</a>
+                                    <a href="{{ path('index')}}#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Réserver</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="carousel-item" style="background: url(http://lorempixel.com/1920/1123/food/3);">
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h1 class="animate__animated animate__fadeInDown"><span>Livrer o</span>u emporter !</h1>
+                                <h1 class="animate__animated animate__fadeInUp"><span>{% for menus in menu %} {{ menus.prix }}€ {% endfor %}</span></h1>
+                                <h2 class="animate__animated animate__fadeInUp"> Entrée - Plat - Dessert</h2>
+                                <div>
+                                    <a href="{{ path('menu') }}"  class="btn-menu animate__animated animate__fadeInUp scrollto">Commander</a>
+                                    <a href="{{ path('index')}}#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Réserver</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon icofont-simple-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+
+                <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon icofont-simple-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+
+            </div>
+        </div>
+    </section><!-- End Hero -->
+
+    <main id="main">
+
+        <!-- ======= About Section ======= -->
+        <section id="about" class="about">
+            <div class="container-fluid">
+
+                <div class="row">
+
+                    <div class="col-lg-5 align-items-stretch video-box" style='background-image: url(/img/slide-2fgfg.jpg);'></div>
+
+                    <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch">
+
+                        <div class="content">
+                            <h3>Eum ipsam laborum deleniti <strong>velit pariatur architecto aut nihil</strong></h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                            </p>
+                            <p class="font-italic">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                                magna aliqua.
+                            </p>
+                            <ul>
+                                <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                                <li><i class="bx bx-check-double"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                                <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                            </ul>
+                            <p>
+                                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                culpa qui officia deserunt mollit anim id est laborum
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End About Section -->
+
+        <!-- ======= Whu Us Section ======= -->
+        <section id="why-us" class="why-us">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Pourquoi<span> nous ? </span></h2>
+                    <p>Ouvert depuis 1981, nous vous offrons :</p>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-4">
+                        <div class="box">
+
+                            <span>01</span>
+                            <h4>De la magie</h4>
+                             <p>Un p'tit coin de paradis avec un personnel au top. Un cadre atypique qui rappelle un peu le monde d'Alice au pays des merveilles </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 mt-4 mt-lg-0">
+                        <div class="box">
+                            <span>02</span>
+                            <h4>Une cuisine faite maison</h4>
+                            <p>Des plats succulents aux saveurs entremêlées pour vous surprendre aussi bien les papilles que les yeux!<br><br></p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 mt-4 mt-lg-0">
+                        <div class="box">
+                            <span>03</span>
+                            <h4>Des produits issus de la région</h4>
+                            <p>Toute la cuisine faite maison est souvent biologique. Nous proposons des plats pour les végétaliens et végétariens.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Whu Us Section -->
+
+        <!-- ======= Book A Table Section ======= -->
+        <section id="book-a-table" class="book-a-table">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Réserver une <span>Table ...</span></h2>
+                    <p>... pour être sûr de manger chez nous !</p>
+                </div>
+
+                {{ form_start(reservationForm) }}
+
+                <div class="form-row">
+                    <div class="col-lg-4 col-md-6 form-group">
+                        {{ form_errors(reservationForm.nom) }}
+                        {{ form_widget(reservationForm.nom)  }}
+                    </div>
+                    <div class="col-lg-4 col-md-6 form-group">
+                        {{ form_errors(reservationForm.email) }}
+                        {{ form_widget(reservationForm.email) }}
+                    </div>
+                    <div class="col-lg-4 col-md-6 form-group">
+                        {{ form_errors(reservationForm.telephone) }}
+                        {{ form_widget(reservationForm.telephone) }}
+                    </div>
+                    <div class=" d-flex justify-content-center col-md-6 form-group">
+                        {{ form_errors(reservationForm.heure) }}
+                        {{ form_widget(reservationForm.heure)}}
+                    </div>
+                    <div class="col-md-6 form-group">
+                        {{ form_errors(reservationForm.personne) }}
+                        {{ form_widget(reservationForm.personne)}}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form_widget(reservationForm.message) }}
+                    <div class="text-right mt-5">
+                        <p class=" mt-3" >Vous recevrez un email pour confirmer votre réservation.</p><button type="submit" class="btn mt-3">Réserver</button>
+                    </div>
+                </div>
+
+                {{ form_end(reservationForm) }}
+
+            </div>
+        </section><!-- End Book A Table Section -->
+
+        <!-- ======= Gallery Section ======= -->
+        <section id="gallery" class="gallery">
+            <div class="container-fluid">
+
+                <div class="section-title">
+                    <h2>Quelques<span> photos ...</span></h2>
+                    <p>Elles sont toutes ici <i class='bx bx-image bx-burst' ></i> !!! </p>
+                    <p><a href="{{ path('galerie') }}" class="btn btn-dark">Voir toutes les photos</a></p>
+
+                </div>
+
+                <div class="row no-gutters">
+
+
+                    {% for plas in pla %}
+                        <div class="col-lg-3 col-md-4">
+                            <div class="gallery-item">
+                                <a href="{{ vich_uploader_asset(plas, 'imageFile')|imagine_filter('carre') }}" class="venobox" data-gall="gallery-item">
+                                    <img src="{{ vich_uploader_asset(plas, 'imageFile')|imagine_filter('carre') }}" alt="{{ plas.imageName}}" class="img-fluid">
+                                </a>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+                </div>
+                </div>
+        </section><!-- End Gallery Section -->
+
+
+
+        <!-- ======= Testimonials Section ======= -->
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+
+                <div class="owl-carousel testimonials-carousel">
+                    {% for repos in repo %}
+                        <div class="testimonial-item">
+                            {{ repos.prenom }} {{ repos.nom }} :
+                            <br>
+                            <br>
+                            <i class="bx bxs-quote-alt-left quote-icon-left"></i> {{ repos.contenu }} <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                            <br>
+                            <span class="note">
+                        {% for i in 1..5 %}
+                            {% if i <=  repos.note  %}
+                                <i class='bx bxs-star bx-tada' ></i>
+
+            {% else  %}
+                                <i class='bx bx-star bx-tada' ></i>
+                            {% endif %}
+                        {% endfor %}
+</span>
+                            <hr>
+                            <td><a href="{{ path ('add_commentaire') }}" class="btn btn-dark">Donner votre avis</a></td>
+                            <td><a href="{{ path('commentaire') }}" class="btn btn-dark">Voir tous les avis</a></td>
+
+                        </div>
+
+
+                    {% endfor%}
+                </div>
+
+
+            </div>
+        </section><!-- End Testimonials Section -->
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+
+
+        <div class="section-title">
+            <h2><span>Nous</span> contactez !</h2>
+            <p>Vous nous cherchez ? Nous sommes ici : <i class='bx bx-laugh bx-tada bx-rotate-180' ></i> </p>
+            <div class="mt-5">
+                <div class="info-wrap">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 info border-right">
+                            <h4>Adresse:</h4>
+                            <p>Chemin de la chapelle des Buis<br>25000 Besançon</p>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 info border-right ">
+                            <h4>Horaire:</h4>
+                            <p>Mardi-Samedi:<br>12:00 - 22:00</p>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 info border-right">
+                            <h4>Facebook:</h4>
+                            <p><a href="https://www.facebook.com" class="facebook">Visitez notre page</a></p>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+                            <h4>Téléphone:</h4>
+                            <p>00 00 00 00 00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2709.7608763131!2d6.039357316343152!3d47.22126097916103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478d7cb2a9b8f9ff%3A0x569dc4f4ca10f1e9!2sChemin%20de%20la%20Chapelle%20des%20Buis%2C%2025000%20Besan%C3%A7on%2C%20France!5e0!3m2!1sfr!2suk!4v1602167500175!5m2!1sfr!2suk" width="100%" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+
+    </section><!-- End Contact Section -->
+
+    </main><!-- End #main -->
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+

@@ -1,0 +1,18 @@
+# See dos how to configure the bundle: https://symfony.com/doc/current/bundles/LiipImagineBundle/basic-usage.html
+liip_imagine:
+    # valid drivers options include "gd" or "gmagick" or "imagick"
+    driver: "gd"
+    filter_sets:
+       carre:
+           filters:
+               # use and setup the "fixed" filter
+               fixed:
+                   # set the fixed size to "120x90" pixels
+                   width: 800
+                   height: 600
+
+
+
+
+
+

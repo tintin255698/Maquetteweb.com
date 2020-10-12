@@ -1,0 +1,198 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Menu{% endblock %}
+
+{% block stylesheets %}
+    <link href="/css/footerInner.css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+    {% include 'navbar/index2.html.twig' %}
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Menu</h2>
+                <ol>
+                    <li><a href="{{ path('index')}}#hero">Accueil</a></li>
+                    <li>Menu</li>
+                </ol>
+            </div>
+
+        </div>
+    </section><!-- End Breadcrumbs Section -->
+
+
+
+
+<section id="menu" class="menu inner-page">
+    <div class="container">
+
+        <div class="mb-5">
+
+
+
+
+            <h1 class="text-center mt-5 mb-5">Notre menu à emporter </h1>
+
+                    <div class="section-title">
+                        <h3>Livraison gratuite et écologique sur 10km</h3><br><br>
+                        <h4>Vous voulez savoir si vous pouvez commander ? Cliquez ci-dessous : <br> <br> </h4> <button id="modalActivate" type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalPreview">
+                            Etes-vous à moins de 10 km ?
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModalPreview" tabindex="-1" role="dialog" aria-labelledby="exampleModalPreviewLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-full-height modal-right" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalPreviewLabel">Calculer la distance</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        {{ form(form) }}
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+<div class="mt-5">
+
+    {% for label, messages in app.flashes  %}
+        <div class="alert alert-{{ label }} alert-dismissible fade show text-center">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor%}
+        </div>
+    {% endfor %}
+
+                    </div>
+
+    <div class="row mt-5">
+        <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="menu-flters">
+                <li data-filter=".filter-menu" class="filter-active">Menu</li>
+                <li data-filter=".filter-biere">Bieres et Coca</li>
+                <li data-filter=".filter-vin">Vin</li>
+                <li data-filter=".filter-limonade">Limonade</li>
+                <li data-filter=".filter-jus">Jus</li>
+                <li data-filter=".filter-eau">Eau</li>
+                <li data-filter=".filter-the">Thé</li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="row menu-container">
+
+
+        {% for thes in the %}
+            <div class="col-lg-6 menu-item filter-the">
+                <div class="menu-content">
+                    <a href="{{ path('panier_add', {'id':thes.id}) }}">{{ thes.produit }}</a><span>{{ thes.prix }}€</span>
+                </div>
+                <div class="menu-ingredients">
+                    {{ thes.description }}
+                </div>
+            </div>
+        {% endfor %}
+
+        {% for ju in jus %}
+            <div class="col-lg-6 menu-item filter-jus">
+                <div class="menu-content">
+                    <a href="{{ path('panier_add', {'id':ju.id}) }}">{{ ju.produit }}</a><span>{{ ju.prix }}€</span>
+                </div>
+                <div class="menu-ingredients">
+                    {{ ju.description }}
+                </div>
+            </div>
+        {% endfor %}
+
+        {% for vins in vin %}
+            <div class="col-lg-6 menu-item filter-vin">
+                <div class="menu-content">
+                    <a href="{{ path('panier_add', {'id':vins.id}) }}">{{ vins.produit }}</a><span>{{ vins.prix }}€</span>
+                </div>
+                <div class="menu-ingredients">
+                    {{ vins.description }}
+                </div>
+            </div>
+        {% endfor %}
+
+        {% for eaux in eau %}
+            <div class="col-lg-6 menu-item filter-eau">
+                <div class="menu-content">
+                    <a href="{{ path('panier_add', {'id':eaux.id}) }}">{{ eaux.produit }}</a><span>{{ eaux.prix }}€</span>
+                </div>
+                <div class="menu-ingredients">
+                    {{ eaux.description }}
+                </div>
+            </div>
+        {% endfor %}
+
+        {% for limonades in limonade %}
+            <div class="col-lg-6 menu-item filter-limonade">
+                <div class="menu-content">
+                    <a href="{{ path('panier_add', {'id':limonades.id}) }}">{{ limonades.produit }}</a><span>{{ limonades.prix }}€</span>
+                </div>
+                <div class="menu-ingredients">
+                    {{ limonades.description }}
+                </div>
+            </div>
+        {% endfor %}
+
+        {% for bieres in biere %}
+            <div class="col-lg-6 menu-item filter-biere">
+                <div class="menu-content">
+                    <a href="{{ path('panier_add', {'id':bieres.id}) }}">{{ bieres.produit }}</a><span>{{ bieres.prix }}€</span>
+                </div>
+                <div class="menu-ingredients">
+                    {{ bieres.description }}
+                </div>
+            </div>
+        {% endfor %}
+
+
+        <div class="col menu-item filter-menu">
+            {% for plas in pla %}
+                <div class="menu-content">
+                    <a href="{{ path('menu_add', {'id':plas.id}) }}">{{ plas.produit }}</a><span>{{ plas.prix }}€</span>
+                </div>
+                <div class="menu-ingredients">
+                    {{ plas.description }}
+                </div>
+            {% endfor %}
+            <p class="text-center partie mt-5">Entrées</p>
+                {% for entres in entre %}
+                    <p class="sans">{{ entres.produit }}</p>
+                {% endfor %}
+
+
+            <p class="text-center partie mt-5">Plats</p>
+
+            {% for repas in repa %}
+                    <p class="sans">{{ repas.produit }}</p>
+                {% endfor %}
+
+            <p class="text-center partie mt-5">Fromages ou desserts</p>
+            {% for desserts in dessert %}
+                    <p class="sans">{{ desserts.produit }}</p>
+            {% endfor %}
+        </div>
+    </div>
+    </div>
+    </div>
+</section>
+</main>
+
+
+
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block stylesheets %}
+    <link href="/css/footerInner.css" rel="stylesheet">
+{% endblock %}
+
+
+{% block body %}
+
+    {% include 'navbar/index2.html.twig' %}
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Inscription</h2>
+                <ol>
+                    <li><a href="{{ path('index')}}#hero">Accueil</a></li>
+                    <li>Inscription</li>
+                </ol>
+            </div>
+
+        </div>
+    </section><!-- End Breadcrumbs Section -->
+
+    <section class="inner-page">
+        <div class="container">
+
+            <div class="mb-5 mt-5">
+
+                <div class="mt-5">
+                    <h1 class="text-center mb-5">Venez vous inscrire !</h1>
+                </div>
+
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+
+
+        {{ form_start(registrationForm) }}
+        <div class="form-row mt-3">
+            <div class="col-lg-6 col-md-6 form-group">
+        {{ form_row(registrationForm.prenom)}}
+            </div>
+            <div class="col-lg-6 col-md-6 form-group">
+                {{ form_row(registrationForm.nom)}}
+            </div>
+        </div>
+        <div class="form-row mt-3">
+            <div class="col-lg-6 col-md-6 form-group">
+                {{ form_row(registrationForm.telephone)}}
+            </div>
+            <div class="col-lg-6 col-md-6  form-group">
+                {{ form_row(registrationForm.email)}}
+            </div>
+        </div>
+        <div class="form-row mt-3">
+            <div class="col-lg-6 col-md-6  form-group">
+                {{ form_row(registrationForm.plainPassword.pass)}}
+            </div>
+            <div class="col-lg-6 col-md-6 form-group">
+                {{ form_row(registrationForm.plainPassword.confirm)}}
+            </div>
+        </div>
+        <div class="form-row mt-3">
+            <div class="col-lg-6 col-md-6 text-right">
+                {{ form_row(registrationForm.agreeTerms)}}
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <a target="_blank"  href="{{ path('condition_de_vente') }}">Voir les conditions générales de ventes et d'utilisations</a>
+            </div>
+        </div>
+        <div class="text-right">
+        <button type="submit" class="btn btn-primary mt-5">Inscription</button>
+        </div>
+        {{ form_end(registrationForm) }}
+
+    </div>
+
+        </div>
+
+
+    </section>
+</main>
+
+
+{% endblock %}

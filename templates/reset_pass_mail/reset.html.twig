@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Renouvellement du mot de passe{% endblock %}
+
+{% block stylesheets %}
+	<link href="/css/footerInner.css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+	{% include 'navbar/index2.html.twig' %}
+
+<main id="main">
+	<!-- ======= Breadcrumbs Section ======= -->
+	<section class="breadcrumbs">
+		<div class="container">
+
+			<div class="d-flex justify-content-between align-items-center">
+				<h2>Renouvellement du mot de passe</h2>
+				<ol>
+					<li><a href="{{ path('index')}}#hero">Accueil</a></li>
+					<li>Renouvellement du mot de passe</li>
+				</ol>
+			</div>
+		</div>
+	</section><!-- End Breadcrumbs Section -->
+	<section class="inner-page">
+		<div class="container">
+
+		{{form_start(form)}}
+		{{form_row(form.password.first)}}
+		{{form_row(form.password.second)}}
+		<div class="class text-right">
+			<button type="submit" class="btn btn-primary mt-3 mb-5">Valider</button>
+		</div>
+		{{form_end(form)}}
+
+	</div>
+	</section>
+</main>
+{% endblock %}
+
+
+
+
+
+
+
+

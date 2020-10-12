@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+
+    <link href="/img/favicon.png" rel="icon">
+    <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Satisfy|Comic+Neue:300,300i,400,400i,700,700i" rel="stylesheet">
+
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/icofont/icofont.min.css" rel="stylesheet">
+    <link href="/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link href="/venobox/venobox.css" rel="stylesheet">
+    <link href="/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/fontawesome.min.js" rel="stylesheet">
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="{{ asset('bundles/mercuryseriesflashy/css/flashy.css') }}" rel="stylesheet">
+
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+
+</body>
+
+{% block body %}{% endblock %}
+
+<footer id="footer">
+    <div class="container">
+        <h3>Lorem Ipsum</h3>
+        <div class="social-links">
+            <a href="https://www.facebook.com" class="facebook"><i class='bx bxl-facebook-circle bx-burst bx-rotate-180' ></i></a>
+        </div>
+        <div class="copyright">
+            &copy; Copyright <strong><span>Vivien</span></strong>. Tous droits réservés
+        </div>
+
+    </div>
+</footer><!-- End Footer -->
+
+<a href="#" class="back-to-top"><i class='bx bxs-chevron-up-circle' ></i></a>
+
+
+
+
+
+{% block footer %}{% endblock %}
+
+
+<!-- Vendor JS Files -->
+<script src="/jquery/jquery.min.js"></script>
+<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/jquery.easing/jquery.easing.min.js"></script>
+<script src="/jquery-sticky/jquery.sticky.js"></script>
+<script src="/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="/venobox/venobox.min.js"></script>
+<script src="/owl.carousel/owl.carousel.min.js"></script>
+<script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+<script src="https://js.stripe.com/v3/"></script>
+
+
+
+<!-- Template Main JS File -->
+<script src="/main.js"></script>
+{% block javascripts %}{% endblock %}
+</body>
+</html>

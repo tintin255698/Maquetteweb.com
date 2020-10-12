@@ -1,0 +1,47 @@
+{%  extends 'base.html.twig' %}
+
+{% block title %}Page non trouvée{% endblock %}
+
+
+{% block stylesheets %}
+    <link href="/css/footerInner.css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+    {% include 'navbar/index2.html.twig' %}
+
+    <main id="main">
+        <!-- ======= Breadcrumbs Section ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2>Droits non accordés pour cette ressource</h2>
+                    <ol>
+                        <li><a href="{{ path('index')}}#hero">Accueil</a></li>
+                        <li>Droits non accordés pour cette ressource</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs Section -->
+        <div class="inner-page">
+            <div class="container">
+
+                <div id="gallery" class="gallery">
+
+
+                    <div class="container text-center mt-5">
+                        <h1 class="mt-5">Alors ? Vous essayez de bousiller le site ?!</h1>
+                        <p class="mt-5">Vous n'avez pas le droit d'accéder à cette ressource !</p>
+                        <a href="{{ path('index') }}" class="btn btn-info">Retour à l'acceuil</a>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+    </main><!-- End #main -->
+
+{% endblock %}

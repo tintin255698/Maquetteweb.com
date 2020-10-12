@@ -1,0 +1,11 @@
+<h1>Nouvelle Réservation</h1><br>
+
+<ul>
+<li>Nom : {{ reservation.nom }}</li>
+<li>Email : {{ reservation.email }}</li>
+<li>Telephone : {{ reservation.telephone }}</li>
+    <li>{{ reservation.date|date('d/m/Y') }}</li>
+    <li>{{ reservation.heure|date('hh:mm') }}</li>
+<li>Nombre : {{ reservation.personne }}</li>
+<li>Message : {{ reservation.message|raw }}</li>
+</ul>

@@ -1,0 +1,190 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Panier{% endblock %}
+
+{% block stylesheets %}
+    <link href="/css/footerInner.css" rel="stylesheet">
+{% endblock %}
+
+
+{% block body %}
+
+    {% include 'navbar/index2.html.twig' %}
+
+<main id="main">
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Votre panier</h2>
+                <ol>
+                    <li><a href="{{ path('index')}}#hero">Accueil</a></li>
+                    <li>Votre panier</li>
+                </ol>
+            </div>
+        </div>
+    </section><!-- End Breadcrumbs Section -->
+<section class="inner-page">
+    <div class="container">
+
+        <h3>Progression de la commande :</h3>
+
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30</div>
+        </div>
+
+
+        {% if panier | length > 0 or menu | length > 0 or composant | length > 0 %}
+
+        <h1 class="mt-5 text-center">Votre panier</h1>
+
+        <h2>Menu :</h2>
+        <p><a href="{{ path('menu_remove')}}" class="btn btn-dark">Supprimer les menus</a></p>
+        <div class="table-responsive mt-5">
+            <table class="table table-hover text-center" style="width:100%">
+                <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Prix</th>
+                    <th>Quantite</th>
+                    <th>Total</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for menus in menu %}
+                    <tr>
+                        <td>{{ menus.product.produit }}</td>
+                        <td> {{ menus.product.prix }}€</td>
+                        <td>{{ menus.quantity }}</td>
+                        <td>{{ menus.product.prix * menus.quantity }}€</td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="3" class="text-right">Total menus : </td>
+                    <td>{{ tot }}€</td>
+                </tr>
+                </tfoot>
+            </table>
+
+
+            </tbody>
+            </table>
+
+
+        </div>
+
+
+        <h2>Detail de votre menu :</h2>
+        <div class="table-responsive mt-5">
+            <table class="table table-hover text-center" style="width:100%">
+                <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Quantite</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for composants in composant %}
+                    <tr>
+                        <td>{{ composants.product.produit }}</td>
+                        <td>{{ composants.quantity }}</td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+
+
+
+            <h2>Boissons :</h2>
+            <p><a href="{{ path('panier_remove')}}" class="btn btn-dark">Supprimer les boissons</a></p>
+        <div class="table-responsive mt-5">
+        <table class="table table-hover text-center" style="width:100%">
+            <thead>
+            <tr>
+            <th>Produit</th>
+            <th>Prix</th>
+            <th>Quantite</th>
+            <th>Total</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for paniers in panier %}
+                <tr>
+                    <td>{{ paniers.product.produit }}</td>
+                    <td>
+                        {% if paniers.product.type == 'jus' and paniers.quantity == 2 %}
+                            4€
+                        {% else %}
+                            {{ paniers.product.prix }}€
+                        {% endif%}
+                    </td>
+                    <td>{{ paniers.quantity }}</td>
+                    <td>
+                        {% if paniers.product.type == 'jus' and paniers.quantity == 2 %}
+                            8€
+                        {% else %}
+                        {{ paniers.product.prix * paniers.quantity }}€
+                        {% endif%}
+                    </td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3" class="text-right">Total boissons : </td>
+                    <td>{{ total }}€</td>
+
+                </tr>
+            </tfoot>
+        </table>
+
+
+        </div>
+
+            <div class="text-right">
+        <button type="submit" class="btn"
+                {% for composants in composant %}
+                 {% for menus in menu %}
+                {% if menus.quantity < composants.quantity %}
+                disabled="disabled" {% endif %} {% endfor%} {% endfor%} onclick="window.open('http://127.0.0.1:8000/accepte');">Continuer - total général : {{ totaux }}€</button>
+        </div>
+<br><br><br>
+    {% else %}
+        <h2 class="text-center mt-5 mb-5">Votre panier est vide ! </h2>
+        <div class="text-center">
+            <img src="/img/betiseetvolupthe.jpg" width="200" height="300"  alt="" class="pb-5">
+        </div>
+    {% endif %}
+    </div>
+</section>
+</main>
+
+{% endblock %}
+
+    {% block javascripts %}
+<script>
+
+        var delay = 500;
+        $(".progress-bar").each(function(i){
+        $(this).delay( delay*i ).animate( { width: $(this).attr('aria-valuenow') + '%' }, delay );
+
+        $(this).prop('Counter',0).animate({
+        Counter: $(this).text()
+        }, {
+        duration: delay,
+        easing: 'swing',
+        step: function (now) {
+        $(this).text(Math.ceil(now)+'%');
+        }
+        });
+        });
+
+</script>
+
+    {% endblock %}
