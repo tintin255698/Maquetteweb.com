@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Paiement échoué{% endblock %}
+
+{% block stylesheets %}
+    <link href="/css/footerInner.css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+    {% include 'navbar/index2.html.twig' %}
+
+    <main id="main">
+        <!-- ======= Breadcrumbs Section ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2>Paiement échoué</h2>
+                    <ol>
+                        <li><a href="{{ path('index')}}#hero">Accueil</a></li>
+                        <li>Paiement échoué</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs Section -->
+        <section class="inner-page">
+            <div class="container">
+
+                <div class="class mt-5">
+                    <h3 class="mt-5">Progression de la commande :</h3>
+                </div>
+
+                <div class="class mt-5 mb-5">
+                    <h1 class="text-center mb-5">Votre paiement n'a pas fonctionnée, merci de recommencer !</h1>
+                </div>
+
+                <div class="text-center">
+                    <img src="/img/{{ asset('logo.jpg') }}">
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
+
+    {% block javascripts %}
+        <script>
+            function Redirect()
+            {
+                window.location="{{ path('checkout')}}";
+            }
+            document.write("You will be redirected to a new page in 5 seconds");
+            setTimeout('Redirect()', 5000);
+        </script>
+    {% endblock %}

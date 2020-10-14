@@ -172,4 +172,16 @@ class AccepteController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/cancel", name="cancel")
+     */
+    public function cancel()
+    {
+        return $this->render('accepte/cancel.html.twig', [
+            'form' => 'form'
+        ]);
+    }
+
+
+
 }
